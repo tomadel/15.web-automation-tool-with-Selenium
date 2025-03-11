@@ -27,8 +27,8 @@ password_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_locate
 login_button = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'login')))
 
 # Enter login details
-username_field.send_keys('guneybeybi')
-password_field.send_keys('Umuryucel$31')
+username_field.send_keys('username')
+password_field.send_keys('password')
 login_button.click()
 
 # Ensure login was successful before proceeding
