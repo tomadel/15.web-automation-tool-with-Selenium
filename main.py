@@ -62,7 +62,7 @@ class WebAutomation:
         email_field.send_keys(email)
         current_address_field.send_keys(current_address)
         permanent_address_field.send_keys(permanent_address)
-        driver.execute("arguments[0].click();", submit_button)
+        self.driver.execute("arguments[0].click();", submit_button)
 
     def download(self):
         # Locate the  upload and download section, and download button
