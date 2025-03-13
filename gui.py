@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from main import WebAutomation
 
 
@@ -16,7 +17,7 @@ class App:
         self.entry_username.grid(row=0, column=1, sticky="ew")
 
         tk.Label(self.login_frame, text="Password").grid(row=1, column=0, sticky="w")
-        self.entry_password= tk.Entry(self.login_frame, show="*")
+        self.entry_password = tk.Entry(self.login_frame, show="*")
         self.entry_password.grid(row=1, column=1, sticky="ew")
 
         # Form submission frame
@@ -43,8 +44,8 @@ class App:
         self.button_frame = tk.Frame()
         self.button_frame.pack(padx=10, pady=10)
 
-        tk.Button(self.button_frame, text="Submit", command= self.submit_data).grid(row=0, column=0, padx=5)
-        tk.Button(self.button_frame, text="Close Browser", command= self.close_browser).grid(row=0, column=1, padx=5)
+        tk.Button(self.button_frame, text="Submit", command=self.submit_data).grid(row=0, column=0, padx=5)
+        tk.Button(self.button_frame, text="Close Browser", command=self.close_browser).grid(row=0, column=1, padx=5)
 
     def submit_data(self):
         username = self.entry_username.get()
@@ -59,7 +60,8 @@ class App:
         self.web_automation.fill_form(full_name, email, current_address, permanent_address)
 
     def close_browser(self):
-        pass
+        self.web_automation.close()
+        messagebox.showinfo("Browser close", "It is submitted successfully.")
 
 
 root = tk.Tk()
