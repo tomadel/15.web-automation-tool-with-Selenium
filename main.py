@@ -78,7 +78,7 @@ class WebAutomation:
 
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     webautomation = WebAutomation()
     webautomation.login("xuser", "xpassword",)
     webautomation.fill_form("Guney Dogan", "guney@gmail.com", "Ruskonlahdenkatu", "Ruskonlahdenkatu")
